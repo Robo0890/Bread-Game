@@ -10,7 +10,7 @@ export var maxspeed = 10
 var movement = Vector2()
 
 func _physics_process(delta):
-	
+	get_parent().get_child(1).position = position
 	
 	if Input.is_action_pressed("PlayerLeft"):
 		

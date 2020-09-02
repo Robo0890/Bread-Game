@@ -3,37 +3,34 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.264516 )
-colors = PoolColorArray( 1, 1, 1, 1 )
+offsets = PoolRealArray( 0.503226, 0.606452 )
+colors = PoolColorArray( 0.21875, 1, 0, 1, 0.679688, 0.398254, 0, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 424, 48 )
+extents = Vector2( 424, 45.6128 )
 
 [node name="Level 1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 480, 48 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -24, 296 )
-z_as_relative = false
-current = true
-zoom = Vector2( 0.3, 0.3 )
-process_mode = 0
-limit_smoothed = true
-smoothing_enabled = true
+[node name="Camera2D" parent="Player" index="1"]
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 480, 448 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 96, 3.60684 )
-scale = Vector2( 0.429688, 96 )
+position = Vector2( 95.3848, 3.77978 )
+rotation = 1.5708
+scale = Vector2( 0.0441718, 849.7 )
 texture = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 104, 8 )
+position = Vector2( 95.3847, 4.25424 )
 shape = SubResource( 3 )
+
+[editable path="Player"]
