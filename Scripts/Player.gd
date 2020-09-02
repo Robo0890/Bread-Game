@@ -20,7 +20,7 @@ func _physics_process(delta):
 			movement.x = -speed
 			
 	if Input.is_action_just_released("PlayerLeft") or Input.is_action_just_released("PlayerRight"):
-		movement.x = lerp(movement.x,0,.1)
+		movement.x = 0
 		
 	if Input.is_action_pressed("PlayerRight"):
 		if Input.is_action_pressed("PlayerLeft"):
