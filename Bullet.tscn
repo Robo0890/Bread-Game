@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.283871 )
+colors = PoolColorArray( 0.923365, 0.976563, 0.0038147, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="Bullet" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 486.58, 275.382 )
+rotation = -1.57079
+scale = Vector2( 0.00605216, 33.1928 )
+texture = SubResource( 2 )
