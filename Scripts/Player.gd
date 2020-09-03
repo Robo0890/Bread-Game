@@ -8,8 +8,18 @@ export var maxfallspeed = 200
 export var speed = 5
 export var maxspeed = 10
 var movement = Vector2()
+var canJump = true
+
+
 
 func _physics_process(delta):
+	
+	if is_on_floor() or is_on_wall():
+		canJump = true
+	else:
+		canJump = false
+	
+	
 	get_parent().get_child(1).position = position
 	
 	if Input.is_action_pressed("PlayerLeft"):
@@ -35,8 +45,9 @@ func _physics_process(delta):
 			$Sprite/Run.play("WalkLeft")
 	
 	
-	if Input.is_action_pressed("PlayerJump") and is_on_floor():
+	if Input.is_action_pressed("PlayerJump") and canJump:
 		velocity.y -= jump_power
+		
 		
 		
 		

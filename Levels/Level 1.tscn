@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Chef.PNG" type="Texture" id=2]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.283871, 0.296774 )
@@ -15,7 +16,15 @@ extents = Vector2( 424, 45.6128 )
 [node name="Level 1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 480, 48 )
+position = Vector2( 498.465, 267.742 )
+
+[node name="Player" parent="Player" index="0"]
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" parent="Player/Player" index="1"]
+scale = Vector2( 0.128227, 0.166667 )
+texture = ExtResource( 2 )
+vframes = 4
 
 [node name="Camera2D" parent="Player" index="1"]
 zoom = Vector2( 0.3, 0.3 )
@@ -30,6 +39,20 @@ scale = Vector2( 0.0441718, 849.7 )
 texture = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 95.3847, 4.25424 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 965.744, 484.51 )
+rotation = -1.57079
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+position = Vector2( 95.3848, 3.77978 )
+rotation = 1.5708
+scale = Vector2( 0.0441718, 849.7 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 95.3847, 4.25424 )
 shape = SubResource( 3 )
 
